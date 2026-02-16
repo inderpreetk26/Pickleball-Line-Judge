@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pickleball-line-judge"
+version = "0.1.0"
+description = "MVP app to map a pickleball court, track ball position, and call in/out"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "opencv-python>=4.8",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+pickleball-line-judge = "pickleball_line_judge.main:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
